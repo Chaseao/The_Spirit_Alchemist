@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float movementMultiplier = 3f;
     [SerializeField] float jumpMultiplier = 3f;
+    [SerializeField] float characterHeight = 3f;
 
     Rigidbody2D rb;
 
@@ -30,6 +31,23 @@ public class Movement : MonoBehaviour
     }
 
     private void OnJump()
+    {
+        if (TouchingGround())
+        {
+            Jump();
+        }
+    }
+
+    private bool TouchingGround()
+    {
+        LayerMask platformLayerMask = LayerMask.GetMask("Platforms");
+
+        RaycastHit2D hitInformation = Physics2D.Raycast(transform.position, Vector2.down, characterHeight, platformLayerMask);
+
+        return hitInformation && hitInformation.collider;
+    }
+
+    private void Jump()
     {
         float horizontalVelocity = rb.velocity.x;
         float verticalVelocity = jumpMultiplier;
