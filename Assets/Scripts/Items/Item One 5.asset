@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
+  m_Name: Item One 5
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 0}
+  itemDescription: "Red Herring\r\n\r-------------\nOnce rumored to hold the key
+    to immortality and infinite wisdom, the petals of the Red Herring were heavily
+    sought after for centuries. Now, with the knowledge that the Red Herring does
+    absolutely nothing and has absolutely no flavor, it has become nothing more than
+    an uncommon landscaping choice.\r\n\r\nUsed in: gardens, garnish, food coloring\r\n"
+  recipe: []

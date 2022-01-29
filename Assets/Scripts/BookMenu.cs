@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BookMenu : IMenu
 {
-    [SerializeField] ButtonController previousPage;
     [SerializeField] Inventory itemDatabase;
-    [SerializeField] List<PageEntry> firstPageEntries;
-    [SerializeField] List<PageEntry> secondPageEntries;
+    [SerializeField] List<PageEntry> pageEntries;
+    [SerializeField] int totalPages;
 
     int currentPage = 1;
 
@@ -18,64 +17,53 @@ public class BookMenu : IMenu
 
     protected override void SetUpButtons()
     {
-        SetUpNextPageButton();
-    }
-
-    private void SetUpNextPageButton()
-    {
         menuButtons.ToggleButtons(true);
         menuButtons.buttonPressed += SwitchCurrentPage;
-    }
 
-    private void SetUpPreviousPageButton()
-    {
-        previousPage.ToggleButtons(true);
-        previousPage.buttonPressed += SwitchCurrentPage;
+        DisplayPage();
     }
 
     private void SwitchCurrentPage(int buttonIndex)
     {
-        if(currentPage == 1)
+        if(buttonIndex != 0)
         {
-            SetUpPreviousPageButton();
-            TearDownNextPageButton();
-            DisplayPageTwo();
-            currentPage = 2;
+            ChangeCurrentPage(1);
         }
-        else if(currentPage == 2)
+        else
         {
-            SetUpNextPageButton();
-            TearDownPreviousPageButton();
-            DisplayPageOne();
+            ChangeCurrentPage(-1);
+        }
+
+        DisplayPage();
+    }
+
+    private void ChangeCurrentPage(int pageAdjustment)
+    {
+        currentPage += pageAdjustment;
+
+        if (currentPage > totalPages)
+        {
             currentPage = 1;
         }
+        else if (currentPage <= 0)
+        {
+            currentPage = totalPages;
+        }
     }
 
-    private void DisplayPageOne()
+    private void DisplayPage()
     {
-        
+        int pageEntriesOffset = pageEntries.Count * (currentPage - 1);
+        for (int i = 0; i < pageEntries.Count; i++)
+        {
+            pageEntries[i].SetEntryToItem(itemDatabase.ItemList[i + pageEntriesOffset]);
+        }
     }
 
-    private void DisplayPageTwo()
-    {
-
-    }
-
-    private void TearDownNextPageButton()
-    {
-        menuButtons.buttonPressed -= SwitchCurrentPage;
-        menuButtons.ToggleButtons(false);
-    }
-
-    private void TearDownPreviousPageButton()
-    {
-        previousPage.buttonPressed -= SwitchCurrentPage;
-        previousPage.ToggleButtons(false);
-    }
 
     protected override void TearDownButtons()
     {
-        TearDownNextPageButton();
-        TearDownPreviousPageButton();
+        menuButtons.buttonPressed -= SwitchCurrentPage;
+        menuButtons.ToggleButtons(false);
     }
 }

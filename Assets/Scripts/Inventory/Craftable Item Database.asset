@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29920bfd9e743f41b602c23a2396e41, type: 3}
   m_Name: Craftable Item Database
   m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 11400000, guid: 9ce8697c8b0f3984494197b44f9ff142, type: 2}
+  itemList: []
   maxItems: 1

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     [SerializeField] Sprite itemImage;
-    [SerializeField, TextArea] string itemDescription;
+    [SerializeField, TextArea(10, 18)] string itemDescription;
     [SerializeField] List<Item> recipe;
 
     public Sprite ItemImage => itemImage;

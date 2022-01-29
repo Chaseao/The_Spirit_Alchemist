@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PageEntry : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image pageEntryImage;
+    [SerializeField] TextMeshProUGUI pageEntryText;
 
-    // Update is called once per frame
-    void Update()
+    public void SetEntryToItem(Item item)
     {
-        
+        pageEntryImage.sprite = item.ItemImage;
+        pageEntryText.text = item.ItemDescription;
     }
 }
