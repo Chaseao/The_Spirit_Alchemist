@@ -64,20 +64,14 @@ public class Movement : MonoBehaviour
 
     private void OnClimb(float climbDirection)
     {
-        if (TouchingVines() && !currentlyClimbing && climbDirection != 0)
+        if (TouchingVines())
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + climbStartOffset);
-            StartClimbing();
-            SetVerticalVelocity(climbSpeed * climbDirection);
-        }
-
-        else if (TouchingVines())
-        {
-            if (climbDirection == 0)
+            if (!currentlyClimbing && climbDirection == 1)
             {
-                SetVerticalVelocity(0);
+                StartClimbing();
             }
-            else
+
+            if (currentlyClimbing)
             {
                 SetVerticalVelocity(climbSpeed * climbDirection);
             }
@@ -86,6 +80,7 @@ public class Movement : MonoBehaviour
 
     private void StartClimbing()
     {
+        transform.position = new Vector2(transform.position.x, transform.position.y + climbStartOffset);
         currentlyClimbing = true;
         rb.gravityScale = 0;
         playerCollider.enabled = false;
