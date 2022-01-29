@@ -163,7 +163,7 @@
                 {
                     "name": "negative",
                     "id": "0ee42103-b21d-49d3-8bf2-9ded628e36d2",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -174,7 +174,7 @@
                 {
                     "name": "positive",
                     "id": "536f2df5-35d1-4a4f-a40e-1620faca727d",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -259,6 +259,14 @@
                     "name": "ToggleMenu",
                     "type": "Button",
                     "id": "35594ebc-8593-4600-9c73-b9972a891da7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Confirm",
+                    "type": "Button",
+                    "id": "889b67a7-8fe2-4283-87c1-cda776c567d4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -532,10 +540,10 @@
                 {
                     "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
+                    "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -658,6 +666,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ToggleMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9223cc66-1e1c-407d-8bcd-b69f3a2fe876",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

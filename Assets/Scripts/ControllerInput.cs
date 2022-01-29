@@ -76,5 +76,36 @@ public class ControllerInput : MonoBehaviour
 
     #region UI
 
+    public delegate void NavigateMenu(Vector2 navigationDirection);
+    public static event NavigateMenu navigateMenu;
+    public delegate void Confirm();
+    public static event Confirm confirm;
+    public delegate void Cancel();
+    public static event Cancel cancel;
+
+    public void OnNavigateMenu(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            navigateMenu?.Invoke(context.ReadValue<Vector2>());
+        }
+    }
+
+    public void OnConfirm(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            confirm?.Invoke();
+        }
+    }
+    
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            cancel?.Invoke();
+        }
+    }
+
     #endregion
 }
