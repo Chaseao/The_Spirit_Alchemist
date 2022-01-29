@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Platforms
-  - 
+  - Vines
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1776348617
+    locked: 0
+  - name: Platforms
+    uniqueID: 1458009173
+    locked: 0
+  - name: Vines
+    uniqueID: 357789233
+    locked: 0
+  - name: NPC
+    uniqueID: 428995611
+    locked: 0
+  - name: Player
+    uniqueID: 468721059
     locked: 0
