@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
-  m_Name: Item One 10
+  m_Name: Floats
   m_EditorClassIdentifier: 
   itemImage: {fileID: 0}
-  itemDescription: Item 10
+  itemDescription: "Floats\r\n\r\nFloats are a foundational ingredient for lifting
+    one\u2019s spirits. A single bowl of toasted floats in milk is enough to make
+    one feel lighter, both spiritually and physically. An entire box, and maybe your
+    feet will even leave the grown.\r\n\r\nUsed in: cereal, potions of defying gravity,
+    potions of cheeriness\r"
   recipe: []

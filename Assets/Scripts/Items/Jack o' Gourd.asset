@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
-  m_Name: Item One 10
+  m_Name: Jack o' Gourd
   m_EditorClassIdentifier: 
   itemImage: {fileID: 0}
-  itemDescription: Item 10
+  itemDescription: "Jack o\u2019 Gourd\r\n\r\nJack o\u2019 Gourds are a staple of
+    autumn, especially during Spooky Season. Sprouting from their flowers with faces
+    fully formed, Jack o\u2019 Gourds are an increasingly popular alternative to
+    the traditional pumpkin.\r\n\r\nUsed in: dope Hallows Eve decorations, potions
+    of prosperity and growth\r"
   recipe: []

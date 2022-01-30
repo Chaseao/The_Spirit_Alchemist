@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
+  m_Name: Cuckoo Cocoa
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 0}
+  itemDescription: "Cuckoo Cocoa\r\n\r\nA popular choice among students the night
+    before an exam. The energy boost from a single cup of Cuckoo Coffee is enough
+    to blast through an entire thesis paper, an autobiography, and possibly a new
+    religious doctrine all in one night. The quality of said works may be questionable,
+    but at least they were written quickly.\r\n\r\nUsed in: insanely potent coffee,
+    chocolate, matchmaking potions\r"
+  recipe: []
