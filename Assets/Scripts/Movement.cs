@@ -10,18 +10,23 @@ public class Movement : MonoBehaviour
     [SerializeField] float characterHeight = 3f;
     [SerializeField] float climbSpeed = 3f;
     [SerializeField] float climbStartOffset = 0.2f;
+    [SerializeField] float circleRadius = 0.2f;
     [SerializeField, ReadOnly] bool currentlyClimbing;
 
     Rigidbody2D rb;
     float originalGravityScale;
+    float currentMoveVelocity = 0;
 
     Collider2D playerCollider;
+
+    Animator animator;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
         currentlyClimbing = false;
         originalGravityScale = rb.gravityScale;
     }
@@ -39,13 +44,21 @@ public class Movement : MonoBehaviour
         {
             StopClimbing();
         }
+
+        SetHorizontalVelocity(currentMoveVelocity);
     }
 
     private void OnMove(float direction)
     {
         if (!currentlyClimbing)
         {
-            SetHorizontalVelocity(direction * movementMultiplier);
+            currentMoveVelocity = direction * movementMultiplier;
+            animator.SetBool("Moving", direction != 0);
+            if (direction != 0) 
+            {
+                Transform image = transform.GetChild(0);
+                image.localScale = new Vector2(Mathf.Abs(image.localScale.x) * direction, image.localScale.y);
+            }
         }
     }
 
@@ -84,7 +97,9 @@ public class Movement : MonoBehaviour
         currentlyClimbing = true;
         rb.gravityScale = 0;
         playerCollider.enabled = false;
-        SetHorizontalVelocity(0);
+        currentMoveVelocity = 0;
+        animator.SetBool("Walking", false);
+        animator.SetBool("Climbing", true);
     }
 
     private void StopClimbing()
@@ -92,13 +107,14 @@ public class Movement : MonoBehaviour
         currentlyClimbing = false;
         rb.gravityScale = originalGravityScale;
         playerCollider.enabled = true;
+        animator.SetBool("Climbing", false);
     }
 
     private bool TouchingGround()
     {
         LayerMask platformLayerMask = LayerMask.GetMask(LayerMask.LayerToName(6));
 
-        RaycastHit2D hitInformation = Physics2D.Raycast(transform.position, Vector2.down, characterHeight, platformLayerMask);
+        RaycastHit2D hitInformation = Physics2D.CircleCast(transform.position, circleRadius, Vector2.down, characterHeight, platformLayerMask);
 
         return hitInformation && hitInformation.collider;
     }
@@ -106,7 +122,7 @@ public class Movement : MonoBehaviour
     {
         LayerMask platformLayerMask = LayerMask.GetMask(LayerMask.LayerToName(6));
 
-        RaycastHit2D hitInformation = Physics2D.Raycast(transform.position, Vector2.down, characterHeight - 0.1f, platformLayerMask);
+        RaycastHit2D hitInformation = Physics2D.CircleCast(transform.position, circleRadius, Vector2.down, characterHeight - 0.1f, platformLayerMask);
 
         return hitInformation && hitInformation.collider;
     }
@@ -127,7 +143,7 @@ public class Movement : MonoBehaviour
 
         float climbingOffset = currentlyClimbing ? 0.1f : -0.1f;
 
-        RaycastHit2D hitInformation = Physics2D.Raycast(transform.position, Vector2.down, characterHeight + climbingOffset, vinesLayerMask);
+        RaycastHit2D hitInformation = Physics2D.CircleCast(transform.position, circleRadius, Vector2.down, characterHeight + climbingOffset, vinesLayerMask);
 
         return hitInformation && hitInformation.collider;
     }
