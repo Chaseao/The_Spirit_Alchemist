@@ -79,7 +79,8 @@ public class BagMenu : IMenu
         {
             RemoveItemFromCrafting(currentItemSelected);
         }
-        else if (craftingSlots.ContainsValue(slotIndex))
+        
+        if (craftingSlots.ContainsValue(slotIndex))
         {
             FindAndRemoveItemInSlot(slotIndex);
         }
