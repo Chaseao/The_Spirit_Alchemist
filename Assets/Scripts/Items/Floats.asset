@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Floats
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 103d1ec947d01e4468244ea5f84b0e2e, type: 3}
   itemDescription: "Floats\r\n\r\nFloats are a foundational ingredient for lifting
     one\u2019s spirits. A single bowl of toasted floats in milk is enough to make
     one feel lighter, both spiritually and physically. An entire box, and maybe your

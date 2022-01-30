@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Placebotato
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: fc2cc6abb94d64046883b788730f6a59, type: 3}
   itemDescription: "Placebotato\r\n\r-------------\nIt has all the aesthetics, powers,
     flavor, and versatility of a normal ass potato.\r\n\r\nUsed in: shoestring fries,
     crinkle-cut fries, curly fries, waffle fries, wedges, tater tots, hash browns,

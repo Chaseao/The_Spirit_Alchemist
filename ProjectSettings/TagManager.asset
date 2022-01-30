@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Platforms
   - Vines
-  - 
+  - Item
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Vines
     uniqueID: 357789233
+    locked: 0
+  - name: Plants
+    uniqueID: 1696411057
     locked: 0
   - name: NPC
     uniqueID: 428995611

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Glowstick
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 02cc3e758a073d547a866e1920f42ef2, type: 3}
   itemDescription: "Glowstick\r\n\r\nOccasionally used as light sources or party
     favors, the glowstick is a flexible and versatile plant. It has many applications
     in alchemy, typically used alongside ingredients that amplify its glow.\r\n\r\nUsed

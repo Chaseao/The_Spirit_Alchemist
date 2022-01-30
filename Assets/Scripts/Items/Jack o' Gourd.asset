@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Jack o' Gourd
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 035d96a722adcdb498c61534894e81a4, type: 3}
   itemDescription: "Jack o\u2019 Gourd\r\n\r\nJack o\u2019 Gourds are a staple of
     autumn, especially during Spooky Season. Sprouting from their flowers with faces
     fully formed, Jack o\u2019 Gourds are an increasingly popular alternative to

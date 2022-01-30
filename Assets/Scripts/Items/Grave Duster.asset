@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Grave Duster
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 1d432aedf9de00047bf6221290782119, type: 3}
   itemDescription: "Grave Duster\r\n\r\nThe grave duster is traditionally believed
     to help souls find rest. Thus, they are often used in funeral processions and
     cemeteries. With the power of alchemy, grave dusters can be brewed into potions

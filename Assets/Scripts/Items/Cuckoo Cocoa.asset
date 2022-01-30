@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Cuckoo Cocoa
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: d1b00de64f763a247980cbe937a8990d, type: 3}
   itemDescription: "Cuckoo Cocoa\r\n\r\nA popular choice among students the night
     before an exam. The energy boost from a single cup of Cuckoo Coffee is enough
     to blast through an entire thesis paper, an autobiography, and possibly a new

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Rust Root
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 4732a867d1414414fbe59625e6127359, type: 3}
   itemDescription: "Rust Root\r\n\r\nNamed after its distinctive flavor, rust root
     was traditionally used for its supposed medicinal properties. With the dawn of
     modern alchemy, rust root has faded out of popular usage. However, till this

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Cattails
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 861f427b1fe6ab04faf2dfb52c1f5e82, type: 3}
   itemDescription: "Cattails\r\n\r\nThese little fellas are best known for their
     adorable shape. Resembling little sausagey cats, the cattail primarily sees use
     as a pond decoration. Some believe that they also have culinary applications,

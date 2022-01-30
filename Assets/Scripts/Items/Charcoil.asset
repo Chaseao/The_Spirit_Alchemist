@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Charcoil
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 73d683e03d335ac4fbacbdc88f6afd6a, type: 3}
   itemDescription: "Charcoil\r\n\r-------------\nCharcoil\u2019s main functionality
     is in the brewing process, not so much the potion itself. Once harvested, Charcoil
     is often placed under cauldrons or deep fryers since it burns slowly and keeps
