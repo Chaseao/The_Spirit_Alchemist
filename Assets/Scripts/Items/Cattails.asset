@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
+  m_Name: Cattails
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 0}
+  itemDescription: "Cattails\r\n\r\nThese little fellas are best known for their
+    adorable shape. Resembling little sausagey cats, the cattail primarily sees use
+    as a pond decoration. Some believe that they also have culinary applications,
+    although most kitchen witches would advise against it.\r\n\r\nUsed in: hot dogs(?)\r"
+  recipe: []
