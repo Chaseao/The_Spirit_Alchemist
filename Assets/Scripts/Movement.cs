@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using PixelCrushers.DialogueSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float climbStartOffset = 0.2f;
     [SerializeField] float circleRadius = 0.2f;
     [SerializeField, ReadOnly] bool currentlyClimbing;
+    [SerializeField, ReadOnly] bool currentlyInteracting;
 
     Rigidbody2D rb;
     float originalGravityScale;
@@ -21,6 +23,7 @@ public class Movement : MonoBehaviour
 
     Animator animator;
 
+    
 
     private void Awake()
     {
@@ -54,7 +57,7 @@ public class Movement : MonoBehaviour
 
     private void OnMove(float direction)
     {
-        if (!currentlyClimbing)
+        if (!currentlyClimbing && !currentlyInteracting)
         {
             currentMoveVelocity = direction * movementMultiplier;
             animator.SetBool("Moving", direction != 0);
@@ -68,7 +71,7 @@ public class Movement : MonoBehaviour
 
     private void OnJump()
     {
-        if (TouchingGround() && !currentlyClimbing)
+        if (TouchingGround() && !currentlyClimbing && !currentlyInteracting)
         {
             Jump();
         }
@@ -81,7 +84,7 @@ public class Movement : MonoBehaviour
 
     private void OnClimb(float climbDirection)
     {
-        if (TouchingVines())
+        if (TouchingVines() && !currentlyInteracting)
         {
             if (!currentlyClimbing && climbDirection == 1)
             {
@@ -112,6 +115,18 @@ public class Movement : MonoBehaviour
         rb.gravityScale = originalGravityScale;
         playerCollider.enabled = true;
         animator.SetBool("Climbing", false);
+    }
+
+    public void OnInteractionBegin()
+    {
+        currentlyInteracting = true;
+        currentMoveVelocity = 0;
+        animator.SetBool("Moving", false);
+    }
+
+    public void OnInteractionEnd()
+    {
+        currentlyInteracting = false;
     }
 
     private bool TouchingGround()

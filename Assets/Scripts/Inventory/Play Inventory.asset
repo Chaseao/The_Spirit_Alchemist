@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29920bfd9e743f41b602c23a2396e41, type: 3}
   m_Name: Play Inventory
   m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 11400000, guid: f75d0d02390f72a40b90f2a1a7e84ac4, type: 2}
-  - {fileID: 11400000, guid: d8763091c62a5154abb20fb03b9041e0, type: 2}
-  - {fileID: 11400000, guid: 2b93fdc732901664a8e2f6ae0d83634c, type: 2}
-  - {fileID: 11400000, guid: 0d60550f359078941b40e39bbff5fc57, type: 2}
+  itemList: []
   maxItems: 6

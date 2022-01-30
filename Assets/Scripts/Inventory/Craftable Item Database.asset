@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29920bfd9e743f41b602c23a2396e41, type: 3}
   m_Name: Craftable Item Database
   m_EditorClassIdentifier: 
-  itemList: []
-  maxItems: 1
+  itemList:
+  - {fileID: 11400000, guid: 7e02fe613858e81438fe948e3b52b2db, type: 2}
+  - {fileID: 11400000, guid: 856b6ba2ab8658d4c8850cd6d59d6144, type: 2}
+  - {fileID: 11400000, guid: 912db8296078a814ea2dec7d597bfb4b, type: 2}
+  maxItems: 3
+  questItemOne: {fileID: 11400000, guid: 7e02fe613858e81438fe948e3b52b2db, type: 2}
+  questItemTwo: {fileID: 11400000, guid: 856b6ba2ab8658d4c8850cd6d59d6144, type: 2}
+  questItemThree: {fileID: 11400000, guid: 912db8296078a814ea2dec7d597bfb4b, type: 2}
+  dialogueTriggerOne: {fileID: 0}
+  dialogueTriggerTwo: {fileID: 0}
+  dialogueTriggerThree: {fileID: 0}

@@ -89,11 +89,14 @@ public class ButtonController : MonoBehaviour
 
         if (hasItems)
         {
+            Sprite itemImage = null;
             if(itemList.Count > buttonIndex)
             {
-                Sprite itemImage = itemList[buttonIndex].ItemImage;
-                SetButtonImage(buttonIndex, itemImage);
+                itemImage = itemList[buttonIndex].ItemImage;
             }
+ 
+            SetButtonImage(buttonIndex, itemImage);
+
         }
 
         bool isCurrentlySelectedButton = buttonsEnabled && buttonIndex == currentButtonSelected;

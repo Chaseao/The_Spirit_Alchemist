@@ -1,25 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory")]
 public class Inventory : ScriptableObject
 {
     [SerializeField] List<Item> itemList;
     [SerializeField] int maxItems;
+    [SerializeField] Item questItemOne = null;
+    [SerializeField] Item questItemTwo = null;
+    [SerializeField] Item questItemThree = null;
 
     public List<Item> ItemList => itemList;
 
-    public bool AddItemToInventory(Item itemToAdd)
+    public void AddItemToInventory(Item itemToAdd)
     {
         bool canAddItem = itemList.Count < maxItems;
 
-        if (canAddItem)
+        if (!canAddItem)
         {
-            itemList.Add(itemToAdd);
+            itemList.RemoveAt(0);
         }
 
-        return canAddItem;
+        if (Contains(itemToAdd))
+        {
+            itemList.Remove(itemToAdd);
+        }
+
+        itemList.Add(itemToAdd);
     }
 
     public void RemoveItemFromInventory(Item itemToRemove)
@@ -53,13 +62,31 @@ public class Inventory : ScriptableObject
                     itemMatches.Add(item);
                 }
             }
-            if (itemMatches.Equals(item.Recipe))
+            if (itemMatches.Count == 3)
             {
                 itemFound = true;
             }
         }
 
         return itemFound;
+    }
+
+    public int DialogueTriggerNumber(Item item)
+    {
+        int dialogueTrigger = 0;
+        if (item.Equals(questItemOne))
+        {
+            dialogueTrigger = 0;
+        }
+        else if (item.Equals(questItemTwo))
+        {
+            dialogueTrigger = 1;
+        }
+        else if (item.Equals(questItemThree))
+        {
+            dialogueTrigger = 2;
+        }
+        return dialogueTrigger;
     }
 
     public Item GetItem(List<Item> itemsBeingCombined)

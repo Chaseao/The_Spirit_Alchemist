@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using PixelCrushers.DialogueSystem;
 
 public class BagMenu : IMenu
 {
@@ -9,6 +10,10 @@ public class BagMenu : IMenu
     [SerializeField] Inventory playerInventory;
     [SerializeField] Inventory itemDatabase;
     [SerializeField, ReadOnly] bool selectingSpotForCrafting = false;
+    [SerializeField] DialogueSystemTrigger dialogueTriggerOne;
+    [SerializeField] DialogueSystemTrigger dialogueTriggerTwo;
+    [SerializeField] DialogueSystemTrigger dialogueTriggerThree;
+
 
     Item currentItemSelected;
 
@@ -58,15 +63,40 @@ public class BagMenu : IMenu
     {
         if (craftingIngredients.Count == 3)
         {
-            Debug.Log("Item database contains recipe: " + itemDatabase.ItemMatchesRecipe(craftingIngredients));
-
-            Debug.Log("Crafting Item with ");
-            Debug.Log("--------------------");
-
-            for (int index = craftingIngredients.Count - 1; index >= 0; index--)
+            if (itemDatabase.ItemMatchesRecipe(craftingIngredients))
             {
-                Debug.Log("Item " + index + ": " + craftingIngredients[index]);
-                RemoveItemFromCrafting(craftingIngredients[index]);
+                Item itemMatched = itemDatabase.GetItem(craftingIngredients);
+
+                int triggerIndex = itemDatabase.DialogueTriggerNumber(itemMatched);
+
+                if (triggerIndex == 0)
+                {
+                    dialogueTriggerOne.OnUse();
+                }
+                else if (triggerIndex == 1)
+                {
+                    dialogueTriggerTwo.OnUse();
+                }
+                else if (triggerIndex == 2)
+                {
+                    dialogueTriggerThree.OnUse();
+                }
+
+                for (int index = craftingIngredients.Count - 1; index >= 0; index--)
+                {
+                    playerInventory.RemoveItemFromInventory(craftingIngredients[index]);
+                    RemoveItemFromCrafting(craftingIngredients[index]);
+                }
+                playerInventory.AddItemToInventory(itemMatched);
+                TearDownBagButtons();
+                SetUpBagButtons();
+            }
+            else
+            {
+                for (int index = craftingIngredients.Count - 1; index >= 0; index--)
+                {
+                    RemoveItemFromCrafting(craftingIngredients[index]);
+                }
             }
         }
     }

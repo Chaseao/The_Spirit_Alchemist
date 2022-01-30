@@ -35,6 +35,7 @@ namespace PixelCrushers.DialogueSystem
                 InputDeviceManager.RegisterInputAction("Horizontal", controls.DemoActionMap.Horizontal);
                 InputDeviceManager.RegisterInputAction("Vertical", controls.DemoActionMap.Vertical);
                 InputDeviceManager.RegisterInputAction("Fire1", controls.DemoActionMap.Fire1);
+                InputDeviceManager.RegisterInputAction("Cancel", controls.DemoActionMap.Cancel);
             }
         }
 
@@ -48,6 +49,7 @@ namespace PixelCrushers.DialogueSystem
                 InputDeviceManager.UnregisterInputAction("Horizontal");
                 InputDeviceManager.UnregisterInputAction("Vertical");
                 InputDeviceManager.UnregisterInputAction("Fire1");
+                InputDeviceManager.UnregisterInputAction("Cancel");
             }
         }
 

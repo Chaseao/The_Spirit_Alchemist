@@ -41,6 +41,14 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d2b67de-d90f-4697-9290-624981946a75"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -179,7 +187,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6de4a513-0301-4138-972a-db7bccc7e316"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -197,6 +205,17 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                     ""action"": ""Fire1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b347855-7909-47ae-a4f2-273e91250fa7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +227,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         m_DemoActionMap_Horizontal = m_DemoActionMap.FindAction("Horizontal", throwIfNotFound: true);
         m_DemoActionMap_Vertical = m_DemoActionMap.FindAction("Vertical", throwIfNotFound: true);
         m_DemoActionMap_Fire1 = m_DemoActionMap.FindAction("Fire1", throwIfNotFound: true);
+        m_DemoActionMap_Cancel = m_DemoActionMap.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -260,6 +280,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_DemoActionMap_Horizontal;
     private readonly InputAction m_DemoActionMap_Vertical;
     private readonly InputAction m_DemoActionMap_Fire1;
+    private readonly InputAction m_DemoActionMap_Cancel;
     public struct DemoActionMapActions
     {
         private @DemoInputControls m_Wrapper;
@@ -267,6 +288,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         public InputAction @Horizontal => m_Wrapper.m_DemoActionMap_Horizontal;
         public InputAction @Vertical => m_Wrapper.m_DemoActionMap_Vertical;
         public InputAction @Fire1 => m_Wrapper.m_DemoActionMap_Fire1;
+        public InputAction @Cancel => m_Wrapper.m_DemoActionMap_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_DemoActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,6 +307,9 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                 @Fire1.started -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnFire1;
                 @Fire1.performed -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnFire1;
                 @Fire1.canceled -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnFire1;
+                @Cancel.started -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
             }
             m_Wrapper.m_DemoActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -298,6 +323,9 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                 @Fire1.started += instance.OnFire1;
                 @Fire1.performed += instance.OnFire1;
                 @Fire1.canceled += instance.OnFire1;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
             }
         }
     }
@@ -307,5 +335,6 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         void OnHorizontal(InputAction.CallbackContext context);
         void OnVertical(InputAction.CallbackContext context);
         void OnFire1(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
 }
