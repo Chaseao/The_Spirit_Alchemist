@@ -44,6 +44,10 @@ public class Movement : MonoBehaviour
         {
             StopClimbing();
         }
+        else if (!TouchingVines())
+        {
+            StopClimbing();
+        }
 
         SetHorizontalVelocity(currentMoveVelocity);
     }
@@ -98,7 +102,7 @@ public class Movement : MonoBehaviour
         rb.gravityScale = 0;
         playerCollider.enabled = false;
         currentMoveVelocity = 0;
-        animator.SetBool("Walking", false);
+        animator.SetBool("Moving", false);
         animator.SetBool("Climbing", true);
     }
 
@@ -114,7 +118,7 @@ public class Movement : MonoBehaviour
     {
         LayerMask platformLayerMask = LayerMask.GetMask(LayerMask.LayerToName(6));
 
-        RaycastHit2D hitInformation = Physics2D.CircleCast(transform.position, circleRadius, Vector2.down, characterHeight, platformLayerMask);
+        RaycastHit2D hitInformation = Physics2D.CircleCast(transform.position + Vector3.down * characterHeight, circleRadius, Vector2.down, 0.2f, platformLayerMask);
 
         return hitInformation && hitInformation.collider;
     }
