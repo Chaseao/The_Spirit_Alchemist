@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Chilly Chilli
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 0370b2d89e6ea0e4a8d9a7417579c944, type: 3}
   itemDescription: 'Chilly Chili
 
     --------------

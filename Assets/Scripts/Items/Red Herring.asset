@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Red Herring
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: f8c7e7164b6d224419ef596ba6ec2ee2, type: 3}
   itemDescription: "Red Herring\r\n\r-------------\nOnce rumored to hold the key
     to immortality and infinite wisdom, the petals of the Red Herring were heavily
     sought after for centuries. Now, with the knowledge that the Red Herring does

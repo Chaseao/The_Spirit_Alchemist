@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Anxietea Leaves
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 7c3463151cb673e44bb922d6a64d6163, type: 3}
   itemDescription: "Anxietea Leaves\r\n\r------------------\nA popular choice among
     universitea students since it can be brewed as regular tea. Adding it to potions
     makes one feel as though they\u2019re adrift in a beauteaful sea, free from all
