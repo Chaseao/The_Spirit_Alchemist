@@ -25,7 +25,7 @@ public class BagMenu : IMenu
         ToggleMenuDisplay(false);
     }
 
-    protected override void SetUpButtons()
+    protected override void SetUpButtons() 
     {
         SetUpBagButtons();
         craftingSlots = new Dictionary<Item, int>();

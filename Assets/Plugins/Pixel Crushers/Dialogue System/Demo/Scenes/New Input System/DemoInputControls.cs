@@ -49,6 +49,14 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""45b5d337-f573-4cf1-ba6d-b3bf56230e05"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -216,6 +224,17 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""01373deb-fc1b-499f-9ade-551a7f1c7f30"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -228,6 +247,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         m_DemoActionMap_Vertical = m_DemoActionMap.FindAction("Vertical", throwIfNotFound: true);
         m_DemoActionMap_Fire1 = m_DemoActionMap.FindAction("Fire1", throwIfNotFound: true);
         m_DemoActionMap_Cancel = m_DemoActionMap.FindAction("Cancel", throwIfNotFound: true);
+        m_DemoActionMap_Quit = m_DemoActionMap.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -281,6 +301,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_DemoActionMap_Vertical;
     private readonly InputAction m_DemoActionMap_Fire1;
     private readonly InputAction m_DemoActionMap_Cancel;
+    private readonly InputAction m_DemoActionMap_Quit;
     public struct DemoActionMapActions
     {
         private @DemoInputControls m_Wrapper;
@@ -289,6 +310,7 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         public InputAction @Vertical => m_Wrapper.m_DemoActionMap_Vertical;
         public InputAction @Fire1 => m_Wrapper.m_DemoActionMap_Fire1;
         public InputAction @Cancel => m_Wrapper.m_DemoActionMap_Cancel;
+        public InputAction @Quit => m_Wrapper.m_DemoActionMap_Quit;
         public InputActionMap Get() { return m_Wrapper.m_DemoActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -310,6 +332,9 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                 @Cancel.started -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnCancel;
+                @Quit.started -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_DemoActionMapActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_DemoActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -326,6 +351,9 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -336,5 +364,6 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         void OnVertical(InputAction.CallbackContext context);
         void OnFire1(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

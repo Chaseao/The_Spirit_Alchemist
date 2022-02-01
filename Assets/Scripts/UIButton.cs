@@ -14,6 +14,7 @@ public class UIButton : MonoBehaviour
 
     public void SetImage(Sprite image)
     {
+        GetComponent<Image>().enabled = image != null;
         GetComponent<Image>().sprite = image;
     }
 }
