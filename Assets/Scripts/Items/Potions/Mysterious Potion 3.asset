@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce29097f9a68c040badb285a4806832, type: 3}
   m_Name: Mysterious Potion 3
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: cd9d85187eb523a4b9b54ae90cde5be5, type: 3}
   itemDescription: 
   recipe:
   - {fileID: 11400000, guid: debc0723c9a1d7249a21c640fd9048e1, type: 2}
