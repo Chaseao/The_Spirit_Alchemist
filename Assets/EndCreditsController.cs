@@ -41,4 +41,9 @@ public class EndCreditsController : MonoBehaviour
         thankYou.enabled = true;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
