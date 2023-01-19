@@ -3,6 +3,7 @@ A heart-warming platformer where you play as Sage as they try to return home whi
 
 What I Learned
 ===============
-- How To Work on Large Teams
-- How to use Version Control
-- How to design Dialogue Systems
+- How to design inventory systems
+- How to design menu systems
+- How to use new unity input system
+- How to read and understand Unity Asset store asset's documentation
