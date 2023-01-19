@@ -1,4 +1,4 @@
-# The_Spirit_Alchemist
+# The Spirit Alchemist
 A heart-warming platformer where you play as Sage as they try to return home while helping various spirits along the way
 
 What I Learned
